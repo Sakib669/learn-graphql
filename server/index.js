@@ -1,23 +1,30 @@
-const { ApolloServer } = require("@apollo/server");
-const express = require("express");
-const { expressMiddleware: startStandaloneServer } = require("@apollo/server/standalone");
-const bodyParser = require("body-parser");
-const cors = require("cors");
+const { ApolloServer } = require('@apollo/server')
+const { startStandaloneServer } = require('@apollo/server/standalone')
 
-const startServer = async () => {
-  const app = express();
-  const server = new ApolloServer({});
+const server = new ApolloServer({
+  typeDefs: `
+    type Todo {
+      id: ID!
+      title: String!
+      completed: Boolean
+    }
 
-  app.use(bodyParser.json());
-  app.use(cors());
+    type Query {
+      getTodos: [Todo]
+    }
+  `,
+  resolvers: {
+    Query: {
+      getTodos: () => [
+        { id: '1', title: 'GraphQL শিখবো', completed: false },
+        { id: '2', title: 'প্রজেক্ট বানাবো', completed: true }
+      ]
+    }
+  }
+})
 
-  await server.start();
-
-  app.use("/graphql", startStandaloneServer(server));
-
-  app.listenerCount(7000, () =>
-    console.log("server started with graphql at port 7000"),
-  );
-};
-
-startServer();
+startStandaloneServer(server, {
+  listen: { port: 7000 }
+}).then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`)
+})
