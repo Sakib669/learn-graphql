@@ -1,0 +1,27 @@
+{
+  "name": "learn-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sakib669/learn-graphql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Sakib669/learn-graphql/issues"
+  },
+  "homepage": "https://github.com/Sakib669/learn-graphql#readme",
+  "dependencies": {
+    "@apollo/server": "^5.4.0",
+    "graphql": "^16.13.1",
+    "nodemon": "^3.1.14"
+  }
+}
