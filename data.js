@@ -70,3 +70,17 @@ export const users = [
     isVerified: true,
   }
 ];
+
+
+export const posts = [
+  { id: "1", title: "GraphQL", content: "Introduction", authorId: "1" },
+  { id: "2", title: "JavaScript", content: "ES6 Features", authorId: "2" },
+  { id: "3", title: "React", content: "Hooks Deep Dive", authorId: "1" },
+  { id: "4", title: "Node.js", content: "Event Loop", authorId: "3" },
+  { id: "5", title: "TypeScript", content: "Advanced Types", authorId: "2" },
+  { id: "6", title: "Next.js", content: "App Router", authorId: "4" },
+  { id: "7", title: "Prisma", content: "ORM Basics", authorId: "3" },
+  { id: "8", title: "GraphQL", content: "Resolvers", authorId: "1" },
+  { id: "9", title: "MongoDB", content: "Aggregation", authorId: "4" },
+  { id: "10", title: "Docker", content: "Containerization", authorId: "2" }
+];
